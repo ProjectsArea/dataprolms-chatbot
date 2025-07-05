@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+langchain
+cohere
+langchain_community
