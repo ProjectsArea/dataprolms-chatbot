@@ -4,8 +4,16 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import cohere
 
-app = FastAPI()
+app = FastAPI()  
+from fastapi.middleware.cors import CORSMiddleware
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or ["http://your-ojs-ip-or-domain"]
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # Mount static files and templates
 templates = Jinja2Templates(directory="templates") 
 
