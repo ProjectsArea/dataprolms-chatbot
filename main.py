@@ -7,9 +7,13 @@ import cohere
 app = FastAPI()  
 from fastapi.middleware.cors import CORSMiddleware
 
+origins = [
+    "http://www.ijernd.com",  # e.g., "http://54.210.45.120" or "http://example.com"
+    "https://www.ijernd.com",  # if using HTTPS
+  ]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or ["http://your-ojs-ip-or-domain"]
+    allow_origins=origins,  # or ["http://your-ojs-ip-or-domain"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
